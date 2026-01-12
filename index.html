@@ -9,25 +9,21 @@
         :root { --deep-red: #B22222; --dark-gray: #333333; --white: #ffffff; }
         body { font-family: 'Poppins', sans-serif; margin: 0; background: #f9f9f9; }
         
-        /* Auction Header */
         header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--deep-red); }
         .logo { font-weight: 700; color: var(--deep-red); font-size: 1.4rem; }
 
-        /* Filter Section */
-        .filter-bar { background: var(--dark-gray); color: white; padding: 20px 5%; text-align: center; }
-        select { padding: 10px; width: 200px; border-radius: 5px; font-size: 1rem; }
+        .filter-bar { background: var(--dark-gray); color: white; padding: 30px 5%; text-align: center; }
+        .search-input { padding: 12px; width: 300px; border-radius: 5px; border: none; font-size: 1rem; margin: 10px; }
 
-        /* Auction Grid */
         .auction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 5%; }
-        .car-card { background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: 0.3s; }
-        .car-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .car-card { background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: 0.3s; display: block; }
         .car-img { width: 100%; height: 200px; background: #eee; object-fit: cover; }
         .car-info { padding: 15px; }
-        .car-info h3 { margin: 0; color: var(--deep-red); }
-        .price { font-weight: 700; color: #333; font-size: 1.2rem; }
-        .btn-bid { display: block; background: var(--deep-red); color: white; text-align: center; padding: 10px; text-decoration: none; margin-top: 10px; border-radius: 4px; }
+        .car-info h3 { margin: 0; color: var(--deep-red); text-transform: uppercase; }
+        .price { font-weight: 700; color: #333; font-size: 1.2rem; margin-top: 10px; }
+        .btn-bid { display: block; background: var(--deep-red); color: white; text-align: center; padding: 12px; text-decoration: none; margin-top: 15px; border-radius: 4px; font-weight: bold; }
 
-        footer { background: var(--dark-gray); color: white; text-align: center; padding: 30px; }
+        footer { background: var(--dark-gray); color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -39,33 +35,36 @@
 
 <section class="filter-bar">
     <h2>SEARCH JAPANESE AUCTION STOCK</h2>
-    <select id="brandFilter">
-        <option value="all">Select Brand (All)</option>
-        <option value="toyota">Toyota</option>
-        <option value="nissan">Nissan</option>
-        <option value="mitsubishi">Mitsubishi</option>
-        <option value="hino">Hino / Trucks</option>
-        <option value="machinery">Construction Machinery</option>
-    </select>
+    <input type="text" id="carSearch" class="search-input" placeholder="Type Brand or Model (e.g. Toyota, HiAce)..." onkeyup="filterCars()">
 </section>
 
-<div class="auction-grid">
+<div class="auction-grid" id="auctionGrid">
     <div class="car-card">
-        <img src="USS Tokyo Japan.jpg" class="car-img" alt="Auction Yard">
+        <img src="USS Tokyo Japan.jpg" class="car-img" alt="Toyota HiAce">
         <div class="car-info">
             <h3>Toyota HiAce Van</h3>
-            <p>Year: 2018 | Mileage: 85,000km</p>
+            <p>Year: 2018 | Diesel | Automatic</p>
             <div class="price">FOB: Inquiry Only</div>
             <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
         </div>
     </div>
 
     <div class="car-card">
-        <img src="pht_02.jpg" class="car-img" alt="Machinery">
+        <img src="pht_02.jpg" class="car-img" alt="Kobelco Excavator">
         <div class="car-info">
-            <h3>Kobelco Excavator</h3>
-            <p>Model: SK200 | Low Working Hours</p>
+            <h3>Kobelco Excavator SK200</h3>
+            <p>Hydraulic Crawler | Low Hours</p>
             <div class="price">Excellent Condition</div>
+            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
+        </div>
+    </div>
+
+    <div class="car-card">
+        <img src="export-certificate.jpg" class="car-img" alt="Nissan Skyline GTR">
+        <div class="car-info">
+            <h3>Nissan Skyline GTR R32</h3>
+            <p>Year: 1991 | RB26 Engine | Grade 4</p>
+            <div class="price">Premium Unit</div>
             <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
         </div>
     </div>
@@ -73,7 +72,28 @@
 
 <footer>
     <p>STL WORLD NETWORK LLC - Your One-Stop Japan Export Partner</p>
+    <p>Tokyo Office: +81 80 1571 0834</p>
 </footer>
+
+<script>
+    function filterCars() {
+        let input = document.getElementById('carSearch').value.toUpperCase();
+        let grid = document.getElementById('auctionGrid');
+        let cards = grid.getElementsByClassName('car-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let title = cards[i].getElementsByTagName('h3')[0];
+            if (title) {
+                let textValue = title.textContent || title.innerText;
+                if (textValue.toUpperCase().indexOf(input) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
