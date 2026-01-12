@@ -3,217 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STL WORLD NETWORK LLC | Japan Vehicle & Machinery Export</title>
+    <title>STL WORLD NETWORK LLC | Japan Live Auction Stock</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --deep-red: #B22222;
-            --dark-gray: #333333;
-            --light-gray: #f4f4f4;
-            --white: #ffffff;
-        }
+        :root { --deep-red: #B22222; --dark-gray: #333333; --white: #ffffff; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f9f9f9; }
+        
+        /* Auction Header */
+        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--deep-red); }
+        .logo { font-weight: 700; color: var(--deep-red); font-size: 1.4rem; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
+        /* Filter Section */
+        .filter-bar { background: var(--dark-gray); color: white; padding: 20px 5%; text-align: center; }
+        select { padding: 10px; width: 200px; border-radius: 5px; font-size: 1rem; }
 
-        /* Header & Navigation */
-        header {
-            background: var(--white);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--deep-red);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Auction Grid */
+        .auction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 5%; }
+        .car-card { background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        .car-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .car-img { width: 100%; height: 200px; background: #eee; object-fit: cover; }
+        .car-info { padding: 15px; }
+        .car-info h3 { margin: 0; color: var(--deep-red); }
+        .price { font-weight: 700; color: #333; font-size: 1.2rem; }
+        .btn-bid { display: block; background: var(--deep-red); color: white; text-align: center; padding: 10px; text-decoration: none; margin-top: 10px; border-radius: 4px; }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--deep-red);
-        }
-
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 600;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1600'); 
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 10%;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            background: var(--deep-red);
-            color: var(--white);
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #8B0000;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 60px 5%;
-            background: var(--light-gray);
-            text-align: center;
-        }
-
-        .service-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .service-card h3 {
-            color: var(--deep-red);
-            margin-bottom: 15px;
-        }
-
-        /* How it Works Section */
-        .how-it-works {
-            padding: 60px 5%;
-        }
-
-        .step {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 4px solid var(--deep-red);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-gray);
-            color: var(--white);
-            padding: 40px 5%;
-            text-align: center;
-        }
-
-        .footer-info {
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
+        footer { background: var(--dark-gray); color: white; text-align: center; padding: 30px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">STL WORLD NETWORK LLC</div>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="mailto:sblogistics@stl-wn.com">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">STL WORLD NETWORK LLC | AUCTION DIRECT</div>
+    <div class="contact">WhatsApp: +81 80 1571 0834</div>
+</header>
 
-    <section class="hero">
-        <h1>Direct from Japan Auctions & Yards</h1>
-        <p>Reliable Vehicles, Heavy Machinery, and Genuine Spare Parts Delivered Worldwide.</p>
-        <a href="https://wa.me/818015710834" class="cta-button">GET A QUOTE TODAY</a>
-    </section>
+<section class="filter-bar">
+    <h2>SEARCH JAPANESE AUCTION STOCK</h2>
+    <select id="brandFilter">
+        <option value="all">Select Brand (All)</option>
+        <option value="toyota">Toyota</option>
+        <option value="nissan">Nissan</option>
+        <option value="mitsubishi">Mitsubishi</option>
+        <option value="hino">Hino / Trucks</option>
+        <option value="machinery">Construction Machinery</option>
+    </select>
+</section>
 
-    <section id="services" class="services">
-        <h2>ONE-STOP EXPORT SERVICE</h2>
-        <div class="service-container">
-            <div class="service-card">
-                <h3>Shipping Booking</h3>
-                <p>Expert Ro-Ro and Container booking arrangements for all global destinations.</p>
-            </div>
-            <div class="service-card">
-                <h3>Customs Clearance</h3>
-                <p>Full export customs handling and smooth documentation support.</p>
-            </div>
-            <div class="service-card">
-                <h3>Local Transport</h3>
-                <p>Efficient vehicle and machinery movement from auction yards to Japanese ports.</p>
-            </div>
+<div class="auction-grid">
+    <div class="car-card">
+        <img src="USS Tokyo Japan.jpg" class="car-img" alt="Auction Yard">
+        <div class="car-info">
+            <h3>Toyota HiAce Van</h3>
+            <p>Year: 2018 | Mileage: 85,000km</p>
+            <div class="price">FOB: Inquiry Only</div>
+            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
         </div>
-    </section>
+    </div>
 
-    <section id="how-it-works" class="how-it-works">
-        <h2>HOW TO ORDER</h2>
-        <div class="step">
-            <strong>1. Sourcing & Selection</strong>
-            <p>Choose from our yard stock or get direct bidding support for Japanese auctions.</p>
+    <div class="car-card">
+        <img src="pht_02.jpg" class="car-img" alt="Machinery">
+        <div class="car-info">
+            <h3>Kobelco Excavator</h3>
+            <p>Model: SK200 | Low Working Hours</p>
+            <div class="price">Excellent Condition</div>
+            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
         </div>
-        <div class="step">
-            <strong>2. Quality Inspection</strong>
-            <p>Every unit is checked for quality and low working hours before export.</p>
-        </div>
-        <div class="step">
-            <strong>3. Shipping & Documentation</strong>
-            <p>We handle the Bill of Lading, Export Certificate, and port logistics for you.</p>
-        </div>
-    </section>
+    </div>
+</div>
 
-    <footer>
-        <div class="footer-info">
-            <p><strong>STL WORLD NETWORK LLC</strong> | Japan Export Logistics Support</p>
-            <p>WhatsApp: +81-80-1571-0834 | Email: sblogistics@stl-wn.com</p>
-            <p>Tokyo, Japan</p>
-        </div>
-        <p>&copy; 2026 STL WORLD NETWORK LLC. All Rights Reserved.</p>
-    </footer>
-
-    <a href="https://wa.me/818015710834" class="whatsapp-float" target="_blank">
-        Chat on WhatsApp
-    </a>
+<footer>
+    <p>STL WORLD NETWORK LLC - Your One-Stop Japan Export Partner</p>
+</footer>
 
 </body>
 </html>
