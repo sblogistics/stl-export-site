@@ -106,6 +106,57 @@
     </div>
 </section>
 
+<section id="calculator" style="padding: 60px 5%; background: #fff; border-top: 5px solid #B22222; font-family: sans-serif;">
+    <div style="max-width: 800px; margin: auto; text-align: center;">
+        <h2 style="color: #B22222;">GLOBAL FREIGHT CALCULATOR (2026)</h2>
+        <div style="margin-bottom: 25px;">
+            <label style="font-weight: bold;">CURRENCY:</label>
+            <select id="currencySelect" onchange="updateCalculation()" style="padding: 10px; border-radius: 5px;">
+                <option value="JPY">Japanese Yen (¥)</option>
+                <option value="USD">US Dollar ($)</option>
+            </select>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
+            <select id="portSelect" onchange="updateCalculation()" style="width: 100%; padding: 12px; border-radius: 5px;">
+                <option value="0">-- Select Port --</option>
+                <option value="17600">Sri Lanka - Hambantota (¥17,600/m3)</option>
+                <option value="18200">Pakistan - Karachi (¥18,200/m3)</option>
+                <option value="15500">Tanzania - Dar Es Salaam (¥15,500/m3)</option>
+                <option value="16000">Guyana - Georgetown (¥16,000/m3)</option>
+            </select>
+            <select id="sizeSelect" onchange="updateCalculation()" style="width: 100%; padding: 12px; border-radius: 5px;">
+                <option value="0">-- Select Vehicle --</option>
+                <option value="12.5">Suzuki Wagon R (12.5 m3)</option>
+                <option value="13.5">Toyota Vitz / Aqua (13.5 m3)</option>
+                <option value="16">Toyota Allion (16 m3)</option>
+                <option value="18">Land Cruiser / Prado (18 m3)</option>
+            </select>
+        </div>
+        <div id="resultBox" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none;">
+            <h3 style="margin: 0;">Total Shipping Cost: <span id="totalDisplay" style="color: #B22222; font-size: 1.8rem;">¥0</span></h3>
+        </div>
+    </div>
+</section>
+
+<script>
+    function updateCalculation() {
+        const rate = parseFloat(document.getElementById('portSelect').value);
+        const m3 = parseFloat(document.getElementById('sizeSelect').value);
+        const curr = document.getElementById('currencySelect').value;
+        if (rate > 0 && m3 > 0) {
+            let total = rate * m3;
+            if (curr === 'USD') {
+                total = Math.round(total / 150); // Using 150 as the fixed JPY/USD rate
+                document.getElementById('totalDisplay').innerText = '$' + total.toLocaleString();
+            } else {
+                document.getElementById('totalDisplay').innerText = '¥' + Math.round(total).toLocaleString();
+            }
+            document.getElementById('resultBox').style.display = 'block';
+        }
+    }
+</script>
+
+    
 <footer>
     <p><strong>STL WORLD NETWORK LLC</strong></p>
     <p>Yokohama / Tokyo, Japan | WhatsApp: +81 80 1571 0834</p>
@@ -126,84 +177,10 @@ function filterStock() {
 </body>
 </html>
 
-<section id="calculator" style="padding: 60px 5%; background: #fff; border-top: 5px solid var(--brand);">
-    <div style="max-width: 800px; margin: auto; text-align: center;">
-        <h2 style="color: var(--brand);">GLOBAL FREIGHT CALCULATOR</h2>
-        
-        <div style="margin-bottom: 25px;">
-            <label style="font-weight: bold; margin-right: 10px;">DISPLAY CURRENCY:</label>
-            <select id="currencySelect" style="padding: 10px; border-radius: 5px; border: 2px solid var(--brand); font-weight: bold;">
-                <option value="JPY">Japanese Yen (¥)</option>
-                <option value="USD">US Dollar ($)</option>
-            </select>
-        </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
-            <div>
-                <label><strong>1. DESTINATION PORT</strong></label>
-                <select id="portSelect" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 5px;">
-                    <option value="0">-- Select Port --</option>
-                    <optgroup label="SOUTH ASIA">
-                        <option value="17600">Sri Lanka - Hambantota (¥17,600/m3)</option>
-                        <option value="18200">Pakistan - Karachi (¥18,200/m3)</option>
-                    </optgroup>
-                    <optgroup label="AFRICA">
-                        <option value="15500">Tanzania - Dar Es Salaam (¥15,500/m3)</option>
-                        <option value="28000">Ghana - Tema (¥28,000/m3)</option>
-                        <option value="16000">Guyana - Georgetown (¥16,000/m3)</option>
-                    </optgroup>
-                </select>
-            </div>
 
-            <div>
-                <label><strong>2. VEHICLE MODEL / SIZE</strong></label>
-                <select id="sizeSelect" style="width: 100%; padding: 12px; margin-top: 10px; border-radius: 5px;">
-                    <option value="0">-- Select Vehicle --</option>
-                    <option value="12.5">Suzuki Wagon R / Alto (12.5 m3)</option>
-                    <option value="13.5">Toyota Vitz / Aqua (13.5 m3)</option>
-                    <option value="16">Toyota Allion / Premio (16 m3)</option>
-                    <option value="18">Land Cruiser / Prado (18 m3)</option>
-                </select>
-            </div>
-        </div>
+       
+              
 
-        <div id="resultBox" style="margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 10px; display: none; border-left: 10px solid var(--brand);">
-            <h3 style="margin: 0; color: #333;">Total Shipping Cost:</h3>
-            <span id="totalDisplay" style="color: var(--brand); font-size: 2.5rem; font-weight: 800;">¥0</span>
-            <p id="rateNote" style="font-size: 0.8rem; color: #666; margin-top: 10px;">*Calculated at internal rate: 1 USD = 150 JPY</p>
-            <a href="https://wa.me/818015710834" class="btn-wa" style="display: inline-flex; margin-top: 15px; width: auto; padding: 12px 25px; background: #25D366; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">BOOK THIS SPACE</a>
-        </div>
-    </div>
-</section>
 
-<script>
-    // Configuration: Update this rate once a week
-    const USD_EXCHANGE_RATE = 150; 
-
-    function updateCalculation() {
-        const ratePerM3 = parseFloat(document.getElementById('portSelect').value);
-        const m3Size = parseFloat(document.getElementById('sizeSelect').value);
-        const currency = document.getElementById('currencySelect').value;
-        const resultBox = document.getElementById('resultBox');
-        const totalDisplay = document.getElementById('totalDisplay');
-
-        if (ratePerM3 > 0 && m3Size > 0) {
-            const totalJPY = ratePerM3 * m3Size;
-            
-            if (currency === 'USD') {
-                const totalUSD = Math.round(totalJPY / USD_EXCHANGE_RATE);
-                totalDisplay.innerText = '$' + totalUSD.toLocaleString();
-            } else {
-                totalDisplay.innerText = '¥' + Math.round(totalJPY).toLocaleString();
-            }
-            resultBox.style.display = 'block';
-        } else {
-            resultBox.style.display = 'none';
-        }
-    }
-
-    document.getElementById('portSelect').addEventListener('change', updateCalculation);
-    document.getElementById('sizeSelect').addEventListener('change', updateCalculation);
-    document.getElementById('currencySelect').addEventListener('change', updateCalculation);
-</script>
 
