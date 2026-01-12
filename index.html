@@ -3,97 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STL WORLD NETWORK LLC | Japan Live Auction Stock</title>
+    <title>STL WORLD NETWORK LLC | Japan Auction Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --deep-red: #B22222; --dark-gray: #333333; --white: #ffffff; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f9f9f9; }
+        :root { --red: #B22222; --gray: #333; --light: #f4f4f4; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); color: var(--gray); }
         
-        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--deep-red); }
-        .logo { font-weight: 700; color: var(--deep-red); font-size: 1.4rem; }
+        /* Navigation */
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--red); sticky; top: 0; z-index: 100; }
+        .logo { font-weight: 700; color: var(--red); font-size: 1.5rem; }
 
-        .filter-bar { background: var(--dark-gray); color: white; padding: 30px 5%; text-align: center; }
-        .search-input { padding: 12px; width: 300px; border-radius: 5px; border: none; font-size: 1rem; margin: 10px; }
+        /* Hero / Search Section */
+        .hero-search { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('USS Tokyo Japan.jpg'); background-size: cover; padding: 60px 5%; text-align: center; color: #fff; }
+        .search-box { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px; backdrop-filter: blur(5px); display: inline-block; width: 80%; max-width: 800px; }
+        input, select { padding: 12px; border: none; border-radius: 5px; margin: 5px; width: 250px; font-size: 1rem; }
+        
+        /* Grid */
+        .grid-title { text-align: center; padding-top: 40px; }
+        .auction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 5%; }
+        .card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 20px; }
+        .card-body h3 { margin: 0 0 10px; color: var(--red); font-size: 1.2rem; }
+        .tag { background: #eee; padding: 3px 8px; border-radius: 3px; font-size: 0.8rem; margin-right: 5px; }
+        .btn { display: block; background: var(--red); color: #fff; text-align: center; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: 600; margin-top: 15px; }
 
-        .auction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 5%; }
-        .car-card { background: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: 0.3s; display: block; }
-        .car-img { width: 100%; height: 200px; background: #eee; object-fit: cover; }
-        .car-info { padding: 15px; }
-        .car-info h3 { margin: 0; color: var(--deep-red); text-transform: uppercase; }
-        .price { font-weight: 700; color: #333; font-size: 1.2rem; margin-top: 10px; }
-        .btn-bid { display: block; background: var(--deep-red); color: white; text-align: center; padding: 12px; text-decoration: none; margin-top: 15px; border-radius: 4px; font-weight: bold; }
-
-        footer { background: var(--dark-gray); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        /* Logistics Section */
+        .logistics { background: var(--gray); color: #fff; padding: 50px 5%; text-align: center; }
+        .logistics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px; }
+        
+        footer { background: #222; color: #fff; text-align: center; padding: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">STL WORLD NETWORK LLC | AUCTION DIRECT</div>
-    <div class="contact">WhatsApp: +81 80 1571 0834</div>
+    <div class="logo">STL WORLD NETWORK LLC</div>
+    <div class="contact">WA: +81 80 1571 0834</div>
 </header>
 
-<section class="filter-bar">
-    <h2>SEARCH JAPANESE AUCTION STOCK</h2>
-    <input type="text" id="carSearch" class="search-input" placeholder="Type Brand or Model (e.g. Toyota, HiAce)..." onkeyup="filterCars()">
+<section class="hero-search">
+    <h1>DIRECT JAPAN AUCTION ACCESS</h1>
+    <p>Sourcing from USS Tokyo, TAA, JAA, and Local Yards</p>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Model (HiAce, GTR, etc.)" onkeyup="filter()">
+        <select id="typeFilter" onchange="filter()">
+            <option value="">All Categories</option>
+            <option value="Vehicle">Vehicles</option>
+            <option value="Machinery">Machinery</option>
+        </select>
+    </div>
 </section>
 
-<div class="auction-grid" id="auctionGrid">
-    <div class="car-card">
-        <img src="USS Tokyo Japan.jpg" class="car-img" alt="Toyota HiAce">
-        <div class="car-info">
-            <h3>Toyota HiAce Van</h3>
-            <p>Year: 2018 | Diesel | Automatic</p>
-            <div class="price">FOB: Inquiry Only</div>
-            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
+<h2 class="grid-title">FEATURED STOCK & RECENT EXPORTS</h2>
+<div class="auction-grid" id="grid">
+    <div class="card" data-type="Vehicle">
+        <img src="USS Tokyo Japan.jpg" alt="Auction Yard">
+        <div class="card-body">
+            <h3>USS TOKYO DIRECT STOCK</h3>
+            <span class="tag">Auction Sourcing</span><span class="tag">USS Tokyo</span>
+            <p>Direct bidding support for all major Japanese auctions.</p>
+            <a href="https://wa.me/818015710834" class="btn">BID NOW</a>
         </div>
     </div>
 
-    <div class="car-card">
-        <img src="pht_02.jpg" class="car-img" alt="Kobelco Excavator">
-        <div class="car-info">
-            <h3>Kobelco Excavator SK200</h3>
-            <p>Hydraulic Crawler | Low Hours</p>
-            <div class="price">Excellent Condition</div>
-            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
+    <div class="card" data-type="Vehicle">
+        <img src="export-certificate.jpg" alt="Nissan Skyline">
+        <div class="card-body">
+            <h3>NISSAN SKYLINE GTR R32</h3>
+            <span class="tag">1991</span><span class="tag">RB26 Engine</span>
+            <p>Quality checked and ready for export documentation.</p>
+            <a href="https://wa.me/818015710834" class="btn">INQUIRE</a>
         </div>
     </div>
 
-    <div class="car-card">
-        <img src="export-certificate.jpg" class="car-img" alt="Nissan Skyline GTR">
-        <div class="car-info">
-            <h3>Nissan Skyline GTR R32</h3>
-            <p>Year: 1991 | RB26 Engine | Grade 4</p>
-            <div class="price">Premium Unit</div>
-            <a href="https://wa.me/818015710834" class="btn-bid">INQUIRE / BID</a>
+    <div class="card" data-type="Machinery">
+        <img src="pht_02.jpg" alt="Excavators">
+        <div class="card-body">
+            <h3>KOBELCO EXCAVATORS</h3>
+            <span class="tag">Machinery</span><span class="tag">Yard Sourcing</span>
+            <p>Construction machinery sourced directly from reliable yards.</p>
+            <a href="https://wa.me/818015710834" class="btn">REQUEST QUOTE</a>
         </div>
     </div>
 </div>
 
+<section class="logistics">
+    <h2>ONE-STOP LOGISTICS SOLUTIONS</h2>
+    <div class="logistics-grid">
+        <div><h3>Shipping</h3><p>Ro-Ro & Container Booking</p></div>
+        <div><h3>Customs</h3><p>Export Clearance & Paperwork</p></div>
+        <div><h3>Transport</h3><p>Yard-to-Port Movement</p></div>
+    </div>
+</section>
+
 <footer>
-    <p>STL WORLD NETWORK LLC - Your One-Stop Japan Export Partner</p>
-    <p>Tokyo Office: +81 80 1571 0834</p>
+    <p>&copy; 2026 STL WORLD NETWORK LLC | Japan Export Logistics Support</p>
 </footer>
 
 <script>
-    function filterCars() {
-        let input = document.getElementById('carSearch').value.toUpperCase();
-        let grid = document.getElementById('auctionGrid');
-        let cards = grid.getElementsByClassName('car-card');
+function filter() {
+    let input = document.getElementById('searchInput').value.toUpperCase();
+    let type = document.getElementById('typeFilter').value;
+    let cards = document.getElementsByClassName('card');
 
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].getElementsByTagName('h3')[0];
-            if (title) {
-                let textValue = title.textContent || title.innerText;
-                if (textValue.toUpperCase().indexOf(input) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-        }
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector('h3').innerText.toUpperCase();
+        let cardType = cards[i].getAttribute('data-type');
+        let show = title.includes(input) && (type === "" || type === cardType);
+        cards[i].style.display = show ? "" : "none";
     }
+}
 </script>
 
 </body>
 </html>
+
+</body>
+</html>
+
