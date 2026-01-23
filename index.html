@@ -183,6 +183,72 @@
     { name: "Every Van", brand:"Suzuki", cat:"van", note:"Commercial / family use" },
     { name: "Toyota KDH Van (Hiace)", brand:"Toyota", cat:"van", note:"Diesel van series" }
   ];
+    <!-- ===== Vehicle Models with Images | STL World Network ===== -->
+<style>
+  .stl-wrap{max-width:1200px;margin:auto;padding:18px}
+  .stl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.stl-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.stl-grid{grid-template-columns:1fr}}
+
+  .stl-card{
+    border:1px solid #eee;border-radius:16px;overflow:hidden;
+    background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.06)
+  }
+  .stl-img img{width:100%;height:190px;object-fit:cover}
+  .stl-body{padding:14px}
+  .stl-name{font-size:17px;font-weight:800;margin:0 0 6px}
+  .stl-meta{font-size:13px;color:#666;margin:0 0 12px}
+  .stl-badge{
+    display:inline-block;background:#f5f5f5;font-size:12px;
+    font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:8px
+  }
+  .stl-btns{display:flex;gap:8px;flex-wrap:wrap}
+  .stl-btn{
+    text-decoration:none;font-size:13px;font-weight:800;
+    padding:9px 12px;border-radius:10px;border:1px solid #ddd
+  }
+  .stl-btn.primary{background:#e60012;color:#fff;border-color:#e60012}
+</style>
+
+<div class="stl-wrap">
+  <h2>Available Models – Japan Stock</h2>
+
+  <div class="stl-grid">
+
+    <!-- CARD TEMPLATE -->
+    <!-- Change image URLs only -->
+    <div class="stl-card">
+      <div class="stl-img"><img src="/wp-content/uploads/toyota-raize.jpg" alt="Toyota Raize"></div>
+      <div class="stl-body">
+        <span class="stl-badge">SUV / Crossover</span>
+        <h3 class="stl-name">Toyota Raize</h3>
+        <p class="stl-meta">Compact SUV • Petrol / Hybrid</p>
+        <div class="stl-btns">
+          <a class="stl-btn primary" href="https://wa.me/818015710834" target="_blank">WhatsApp</a>
+          <a class="stl-btn" href="/contact">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stl-card">
+      <div class="stl-img"><img src="/wp-content/uploads/honda-vezel.jpg" alt="Honda Vezel"></div>
+      <div class="stl-body">
+        <span class="stl-badge">SUV / Crossover</span>
+        <h3 class="stl-name">Honda Vezel</h3>
+        <p class="stl-meta">Hybrid / Petrol</p>
+        <div class="stl-btns">
+          <a class="stl-btn primary" href="https://wa.me/818015710834" target="_blank">WhatsApp</a>
+          <a class="stl-btn" href="/contact">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat card for other models -->
+    
+  </div>
+</div>
+<!-- ===== END ===== -->
+
 
   const grid = document.getElementById("stlGrid");
   const search = document.getElementById("stlSearch");
@@ -285,6 +351,7 @@ function filterStock() {
 
        
               
+
 
 
 
