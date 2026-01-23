@@ -123,6 +123,110 @@
                 <option value="18200">Pakistan - Karachi (¥18,200/m3)</option>
                 <option value="15500">Tanzania - Dar Es Salaam (¥15,500/m3)</option>
                 <option value="16000">Guyana - Georgetown (¥16,000/m3)</option>
+                <!-- ===== Vehicle Models Section (STL World Network) ===== -->
+<style>
+  .stl-wrap{max-width:1100px;margin:0 auto;padding:18px}
+  .stl-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .stl-title{font-size:22px;font-weight:800;margin:0}
+  .stl-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .stl-input,.stl-select{padding:10px 12px;border:1px solid #ddd;border-radius:10px;min-width:220px}
+  .stl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:900px){.stl-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.stl-grid{grid-template-columns:1fr}.stl-input,.stl-select{min-width:100%}}
+  .stl-card{border:1px solid #eee;border-radius:14px;padding:14px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+  .stl-badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid #eee;margin-bottom:10px}
+  .stl-name{font-size:16px;font-weight:800;margin:0 0 6px}
+  .stl-meta{font-size:13px;color:#666;margin:0 0 12px}
+  .stl-btns{display:flex;gap:8px;flex-wrap:wrap}
+  .stl-btn{display:inline-block;text-decoration:none;font-weight:800;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid #ddd}
+  .stl-btn.primary{background:#e60012;color:#fff;border-color:#e60012} /* STL red */
+  .stl-btn:hover{opacity:.92}
+</style>
+
+<div class="stl-wrap" id="stl-models">
+  <div class="stl-head">
+    <h2 class="stl-title">Available Models (Japan Stock)</h2>
+
+    <div class="stl-controls">
+      <input class="stl-input" id="stlSearch" type="text" placeholder="Search model (e.g., Vezel, Raize, Yaris)">
+      <select class="stl-select" id="stlFilter">
+        <option value="all">All Categories</option>
+        <option value="suv">SUV / Crossover</option>
+        <option value="hatch">Hatchback / Compact</option>
+        <option value="kei">Kei Cars</option>
+        <option value="van">Vans / Commercial</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="stl-grid" id="stlGrid"></div>
+</div>
+
+<script>
+  // ✅ Edit here anytime (add more models / categories)
+  const STL_MODELS = [
+    { name: "Toyota Raize", brand:"Toyota", cat:"suv", note:"Compact SUV" },
+    { name: "Honda Vezel", brand:"Honda", cat:"suv", note:"Hybrid / Petrol options" },
+    { name: "Toyota C-HR", brand:"Toyota", cat:"suv", note:"Crossover" },
+    { name: "Yaris Cross", brand:"Toyota", cat:"suv", note:"Compact SUV" },
+
+    { name: "Toyota Corolla", brand:"Toyota", cat:"hatch", note:"Sedan / Touring variants" },
+    { name: "Vitz", brand:"Toyota", cat:"hatch", note:"Compact hatch" },
+    { name: "Yaris", brand:"Toyota", cat:"hatch", note:"Compact hatch" },
+
+    { name: "Honda N-BOX Custom", brand:"Honda", cat:"kei", note:"Kei (popular)" },
+    { name: "Honda N-WGN", brand:"Honda", cat:"kei", note:"Kei wagon" },
+    { name: "Alto", brand:"Suzuki", cat:"kei", note:"Kei (economy)" },
+    { name: "Daihatsu Mira", brand:"Daihatsu", cat:"kei", note:"Kei compact" },
+    { name: "Daihatsu Move", brand:"Daihatsu", cat:"kei", note:"Kei tall wagon" },
+
+    { name: "Every Van", brand:"Suzuki", cat:"van", note:"Commercial / family use" },
+    { name: "Toyota KDH Van (Hiace)", brand:"Toyota", cat:"van", note:"Diesel van series" }
+  ];
+
+  const grid = document.getElementById("stlGrid");
+  const search = document.getElementById("stlSearch");
+  const filter = document.getElementById("stlFilter");
+
+  function modelCard(m){
+    const badgeLabel = m.cat === "suv" ? "SUV / Crossover" :
+                       m.cat === "hatch" ? "Hatchback / Compact" :
+                       m.cat === "kei" ? "Kei Car" : "Van / Commercial";
+    const waText = encodeURIComponent(`Hello STL World Network. I want ${m.name}. Please share available units, auction sheets, price, and shipping options.`);
+    const waLink = `https://wa.me/818015710834?text=${waText}`;
+
+    return `
+      <div class="stl-card" data-cat="${m.cat}" data-name="${(m.name+m.brand).toLowerCase()}">
+        <span class="stl-badge">${badgeLabel}</span>
+        <h3 class="stl-name">${m.name}</h3>
+        <p class="stl-meta"><b>Brand:</b> ${m.brand} &nbsp;•&nbsp; ${m.note}</p>
+        <div class="stl-btns">
+          <a class="stl-btn primary" href="${waLink}" target="_blank" rel="noopener">WhatsApp Inquiry</a>
+          <a class="stl-btn" href="/contact" target="_self">Contact Form</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function render(){
+    const q = (search.value || "").trim().toLowerCase();
+    const c = filter.value;
+
+    const items = STL_MODELS.filter(m=>{
+      const matchText = (m.name + " " + m.brand).toLowerCase().includes(q);
+      const matchCat = (c === "all") || (m.cat === c);
+      return matchText && matchCat;
+    });
+
+    grid.innerHTML = items.map(modelCard).join("") || `<div class="stl-card"><b>No matches.</b> Try another keyword.</div>`;
+  }
+
+  search.addEventListener("input", render);
+  filter.addEventListener("change", render);
+  render();
+</script>
+<!-- ===== / Vehicle Models Section ===== -->
+
             </select>
             <select id="sizeSelect" onchange="updateCalculation()" style="width: 100%; padding: 12px; border-radius: 5px;">
                 <option value="0">-- Select Vehicle --</option>
@@ -181,6 +285,7 @@ function filterStock() {
 
        
               
+
 
 
 
