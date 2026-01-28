@@ -3,291 +3,1176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STL WORLD NETWORK LLC | Premium Japan Exports</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>        
-        :root { --brand: #B22222; --bg: #f8f9fa; --text: #1a1a1a; }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--text); }
-        
-        /* Navigation - Professional & Slim */
-        nav { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--brand); letter-spacing: -1px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 20px; font-size: 0.9rem; }
+    <title>STL WORLD NETWORK LLC| Japanese Vehicles & Spare Parts Worldwide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --dark-navy: #0A1628;
+            --light-gray: #F5F5F5;
+            --accent-orange: #FF6B35;
+            --text-dark: #1A1A1A;
+            --text-light: #6B6B6B;
+            --border-color: #E0E0E0;
+        }
 
-        /* Premium Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('USS Tokyo Japan.jpg'); background-size: cover; background-position: center; padding: 100px 5%; text-align: center; color: #fff; }
-        .hero h1 { font-size: 3rem; margin: 0; font-weight: 800; }
-        .hero p { font-size: 1.1rem; opacity: 0.9; margin: 20px 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Stock Filter */
-        .filter-section { background: #fff; padding: 20px 5%; display: flex; gap: 10px; justify-content: center; border-bottom: 1px solid #ddd; }
-        input { border: 1px solid #ddd; padding: 12px; border-radius: 8px; width: 300px; }
+        body {
+            font-family: 'Archivo', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        /* Professional Stock Grid */
-        .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; padding: 40px 5%; }
-        .car-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .car-card:hover { transform: translateY(-5px); }
-        .car-img { width: 100%; height: 220px; object-fit: cover; }
-        .car-data { padding: 20px; }
-        .car-data h3 { margin: 0; font-size: 1.1rem; text-transform: uppercase; }
-        .specs { display: flex; gap: 10px; margin: 10px 0; font-size: 0.85rem; color: #666; }
-        .spec-item { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; }
-        .price-tag { font-size: 1.3rem; font-weight: 800; color: var(--brand); margin: 15px 0; }
-        
-        .btn-wa { display: block; background: #25D366; color: #fff; text-align: center; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        /* Header & Navigation */
+        header {
+            background: var(--dark-navy);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-        /* Logistics Trust Section */
-        .trust-bar { background: var(--text); color: #fff; padding: 40px 5%; text-align: center; }
-        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .top-bar {
+            background: var(--primary-red);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
 
-        footer { padding: 40px 5%; background: #eee; text-align: center; font-size: 0.9rem; }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .contact-info span {
+            margin-right: 25px;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 110px;
+            height: 85vh;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2740 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: white;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-red);
+            display: block;
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #A00D24;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(200, 16, 46, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark-navy);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--primary-red);
+            color: white;
+            padding: 60px 40px;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 40px;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--dark-navy);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-left: 4px solid var(--primary-red);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+
+        .service-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .service-card ul {
+            margin-top: 15px;
+            list-style: none;
+        }
+
+        .service-card ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        /* Vehicle Categories */
+        .vehicle-categories {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .categories-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-red);
+            transform: scale(1.05);
+        }
+
+        .category-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Shipping Section */
+        .shipping {
+            padding: 100px 40px;
+            background: var(--dark-navy);
+            color: white;
+        }
+
+        .shipping-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .shipping-method {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .shipping-method h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .shipping-method p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .shipping-features {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .shipping-features li {
+            padding: 10px 0;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .shipping-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+
+        /* Quote Form */
+        .quote-section {
+            padding: 100px 40px;
+            background: var(--light-gray);
+        }
+
+        .quote-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            font-family: 'Archivo', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 40px;
+            background: var(--light-gray);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-red);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            color: white;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .categories-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .shipping-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h1 span {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid,
+            .categories-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-
-<nav>
-    <div class="logo">STL WORLD NETWORK LLC</div>
-    <div class="nav-links">
-        <a href="#stock">Stock</a>
-        <a href="#services">Logistics</a>
-        <a href="https://wa.me/818015710834">Contact</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>Quality Vehicles from Japan</h1>
-    <p>USS Tokyo • ARAI • AUCNET | Direct Export to Your Port</p>
-</section>
-
-<div class="filter-section">
-    <input type="text" id="search" placeholder="Search Model (e.g. BMW, Mini, HiAce)" onkeyup="filterStock()">
-</div>
-
-<div class="stock-grid" id="stockGrid">
-    <div class="car-card">
-        <img src="USS Tokyo Japan.jpg" class="car-img" alt="BMW Mini">
-        <div class="car-data">
-            <h3>BMW MINI COOPER SD</h3>
-            <div class="specs">
-                <span class="spec-item">2021</span>
-                <span class="spec-item">40k KM</span>
-                <span class="spec-item">Diesel</span>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span>📞 +81-80-1571-0834</span>
+                    <span>✉️ sblogistics@stl-wn.com</span>
+                </div>
+                <div class="language">
+                    🌐 EN | JP | FR | ES | AR
+                </div>
             </div>
-            <div class="price-tag">ASK FOR FOB PRICE</div>
-            <a href="https://api.whatsapp.com/send?phone=818015710834&text=I am interested in the BMW Mini Cooper 2021" class="btn-wa">
-                INQUIRE ON WHATSAPP
-            </a>
         </div>
-    </div>
+        <nav>
+            <div class="logo">JDM<span>GLOBAL</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#vehicles">Vehicles</a></li>
+                <li><a href="#shipping">Shipping</a></li>
+                <li><a href="#parts">Spare Parts</a></li>
+                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="car-card">
-        <img src="pht_02.jpg" class="car-img" alt="Excavator">
-        <div class="car-data">
-            <h3>KOBELCO SK200 EXCAVATOR</h3>
-            <div class="specs">
-                <span class="spec-item">High Quality</span>
-                <span class="spec-item">Low Hours</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>
+                JAPANESE VEHICLES
+                <span>DELIVERED WORLDWIDE</span>
+            </h1>
+            <p>Premium Japanese cars, trucks, and spare parts exported globally with complete shipping solutions. Experience seamless Ro-Ro and container shipping services.</p>
+            <div class="cta-buttons">
+                <a href="#quote" class="btn btn-primary">Request Quote</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
             </div>
-            <div class="price-tag">READY FOR SHIPPING</div>
-            <a href="https://api.whatsapp.com/send?phone=818015710834&text=I am interested in the Kobelco Excavator" class="btn-wa">
-                INQUIRE ON WHATSAPP
-            </a>
         </div>
-    </div>
-</div>
+    </section>
 
-<section class="trust-bar" id="services">
-    <h2>WHY EXPORTERS TRUST STL WORLD NETWORK</h2>
-    <div class="trust-grid">
-        <div><strong>FAST BOOKING</strong><br>Ro-Ro & Container</div>
-        <div><strong>CLEARANCE</strong><br>Customs Specialist</div>
-        <div><strong>DOCUMENTS</strong><br>B/L & Export Certs</div>
-        <div><strong>INSPECTION</strong><br>Condition Guaranteed</div>
-    </div>
-</section>
-
-<section id="calculator" style="padding: 60px 5%; background: #fff; border-top: 5px solid #B22222; font-family: sans-serif;">
-    <div style="max-width: 800px; margin: auto; text-align: center;">
-        <h2 style="color: #B22222;">GLOBAL FREIGHT CALCULATOR (2026)</h2>
-        <div style="margin-bottom: 25px;">
-            <label style="font-weight: bold;">CURRENCY:</label>
-            <select id="currencySelect" onchange="updateCalculation()" style="padding: 10px; border-radius: 5px;">
-                <option value="JPY">Japanese Yen (¥)</option>
-                <option value="USD">US Dollar ($)</option>
-            </select>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>5000+</h3>
+                <p>Vehicles Exported</p>
+            </div>
+            <div class="stat-item">
+                <h3>80+</h3>
+                <p>Countries Served</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Customer Satisfaction</p>
+            </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
-            <select id="portSelect" onchange="updateCalculation()" style="width: 100%; padding: 12px; border-radius: 5px;">
-                <option value="0">-- Select Port --</option>
-                <option value="17600">Sri Lanka - Hambantota (¥17,600/m3)</option>
-                <option value="18200">Pakistan - Karachi (¥18,200/m3)</option>
-                <option value="15500">Tanzania - Dar Es Salaam (¥15,500/m3)</option>
-                <option value="16000">Guyana - Georgetown (¥16,000/m3)</option>
-                <!-- ===== Vehicle Models Section (STL World Network) ===== -->
-<style>
-  .stl-wrap{max-width:1100px;margin:0 auto;padding:18px}
-  .stl-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px}
-  .stl-title{font-size:22px;font-weight:800;margin:0}
-  .stl-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .stl-input,.stl-select{padding:10px 12px;border:1px solid #ddd;border-radius:10px;min-width:220px}
-  .stl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  @media(max-width:900px){.stl-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.stl-grid{grid-template-columns:1fr}.stl-input,.stl-select{min-width:100%}}
-  .stl-card{border:1px solid #eee;border-radius:14px;padding:14px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.05)}
-  .stl-badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid #eee;margin-bottom:10px}
-  .stl-name{font-size:16px;font-weight:800;margin:0 0 6px}
-  .stl-meta{font-size:13px;color:#666;margin:0 0 12px}
-  .stl-btns{display:flex;gap:8px;flex-wrap:wrap}
-  .stl-btn{display:inline-block;text-decoration:none;font-weight:800;font-size:13px;padding:9px 12px;border-radius:10px;border:1px solid #ddd}
-  .stl-btn.primary{background:#e60012;color:#fff;border-color:#e60012} /* STL red */
-  .stl-btn:hover{opacity:.92}
-</style>
+    </section>
 
-<div class="stl-wrap" id="stl-models">
-  <div class="stl-head">
-    <h2 class="stl-title">Available Models (Japan Stock)</h2>
-
-    <div class="stl-controls">
-      <input class="stl-input" id="stlSearch" type="text" placeholder="Search model (e.g., Vezel, Raize, Yaris)">
-      <select class="stl-select" id="stlFilter">
-        <option value="all">All Categories</option>
-        <option value="suv">SUV / Crossover</option>
-        <option value="hatch">Hatchback / Compact</option>
-        <option value="kei">Kei Cars</option>
-        <option value="van">Vans / Commercial</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="stl-grid" id="stlGrid"></div>
-</div>
-
-<script>
-  // ✅ Edit here anytime (add more models / categories)
-  const STL_MODELS = [
-    { name: "Toyota Raize", brand:"Toyota", cat:"suv", note:"Compact SUV" },
-    { name: "Honda Vezel", brand:"Honda", cat:"suv", note:"Hybrid / Petrol options" },
-    { name: "Toyota C-HR", brand:"Toyota", cat:"suv", note:"Crossover" },
-    { name: "Yaris Cross", brand:"Toyota", cat:"suv", note:"Compact SUV" },
-
-    { name: "Toyota Corolla", brand:"Toyota", cat:"hatch", note:"Sedan / Touring variants" },
-    { name: "Vitz", brand:"Toyota", cat:"hatch", note:"Compact hatch" },
-    { name: "Yaris", brand:"Toyota", cat:"hatch", note:"Compact hatch" },
-
-    { name: "Honda N-BOX Custom", brand:"Honda", cat:"kei", note:"Kei (popular)" },
-    { name: "Honda N-WGN", brand:"Honda", cat:"kei", note:"Kei wagon" },
-    { name: "Alto", brand:"Suzuki", cat:"kei", note:"Kei (economy)" },
-    { name: "Daihatsu Mira", brand:"Daihatsu", cat:"kei", note:"Kei compact" },
-    { name: "Daihatsu Move", brand:"Daihatsu", cat:"kei", note:"Kei tall wagon" },
-
-    { name: "Every Van", brand:"Suzuki", cat:"van", note:"Commercial / family use" },
-    { name: "Toyota KDH Van (Hiace)", brand:"Toyota", cat:"van", note:"Diesel van series" }
-  ];
-
-  const grid = document.getElementById("stlGrid");
-  const search = document.getElementById("stlSearch");
-  const filter = document.getElementById("stlFilter");
-
-  function modelCard(m){
-    const badgeLabel = m.cat === "suv" ? "SUV / Crossover" :
-                       m.cat === "hatch" ? "Hatchback / Compact" :
-                       m.cat === "kei" ? "Kei Car" : "Van / Commercial";
-    const waText = encodeURIComponent(`Hello STL World Network. I want ${m.name}. Please share available units, auction sheets, price, and shipping options.`);
-    const waLink = `https://wa.me/818015710834?text=${waText}`;
-
-    return `
-      <div class="stl-card" data-cat="${m.cat}" data-name="${(m.name+m.brand).toLowerCase()}">
-        <span class="stl-badge">${badgeLabel}</span>
-        <h3 class="stl-name">${m.name}</h3>
-        <p class="stl-meta"><b>Brand:</b> ${m.brand} &nbsp;•&nbsp; ${m.note}</p>
-        <div class="stl-btns">
-          <a class="stl-btn primary" href="${waLink}" target="_blank" rel="noopener">WhatsApp Inquiry</a>
-          <a class="stl-btn" href="/contact" target="_self">Contact Form</a>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>OUR COMPREHENSIVE SERVICES</h2>
+            <p>End-to-end solutions for your Japanese vehicle import needs</p>
         </div>
-      </div>
-    `;
-  }
-
-  function render(){
-    const q = (search.value || "").trim().toLowerCase();
-    const c = filter.value;
-
-    const items = STL_MODELS.filter(m=>{
-      const matchText = (m.name + " " + m.brand).toLowerCase().includes(q);
-      const matchCat = (c === "all") || (m.cat === c);
-      return matchText && matchCat;
-    });
-
-    grid.innerHTML = items.map(modelCard).join("") || `<div class="stl-card"><b>No matches.</b> Try another keyword.</div>`;
-  }
-
-  search.addEventListener("input", render);
-  filter.addEventListener("change", render);
-  render();
-</script>
-<!-- ===== / Vehicle Models Section ===== -->
-
-            </select>
-            <select id="sizeSelect" onchange="updateCalculation()" style="width: 100%; padding: 12px; border-radius: 5px;">
-                <option value="0">-- Select Vehicle --</option>
-                <option value="12.5">Suzuki Wagon R (12.5 m3)</option>
-                <option value="13.5">Toyota Vitz / Aqua (13.5 m3)</option>
-                <option value="16">Toyota Allion (16 m3)</option>
-                <option value="18">Land Cruiser / Prado (18 m3)</option>
-            </select>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Vehicle Export</h3>
+                <p>Direct access to Japanese auctions and dealers. We source and export all types of vehicles including:</p>
+                <ul>
+                    <li>Passenger cars (sedan, SUV, hatchback)</li>
+                    <li>Commercial vehicles & trucks</li>
+                    <li>Buses & heavy machinery</li>
+                    <li>Classic & vintage JDM cars</li>
+                    <li>Hybrid & electric vehicles</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚢</div>
+                <h3>Ro-Ro Shipping</h3>
+                <p>Roll-on/Roll-off shipping for cost-effective vehicle transport:</p>
+                <ul>
+                    <li>Direct port-to-port service</li>
+                    <li>Weekly departures worldwide</li>
+                    <li>Insurance coverage included</li>
+                    <li>Competitive freight rates</li>
+                    <li>Full tracking & documentation</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Container Shipping</h3>
+                <p>Secure container shipping for vehicles and spare parts:</p>
+                <ul>
+                    <li>20ft & 40ft container options</li>
+                    <li>Multiple vehicles per container</li>
+                    <li>Spare parts consolidation</li>
+                    <li>Door-to-door delivery available</li>
+                    <li>Maximum protection & security</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Spare Parts Supply</h3>
+                <p>Genuine Japanese spare parts for all makes and models:</p>
+                <ul>
+                    <li>Engine & transmission parts</li>
+                    <li>Body panels & accessories</li>
+                    <li>Electrical components</li>
+                    <li>Interior & exterior parts</li>
+                    <li>Performance upgrades</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Documentation & Customs</h3>
+                <p>Complete paperwork and customs clearance support:</p>
+                <ul>
+                    <li>Export certificates</li>
+                    <li>Bill of lading</li>
+                    <li>Insurance documents</li>
+                    <li>Customs declaration</li>
+                    <li>Registration assistance</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Pre-Inspection</h3>
+                <p>Thorough vehicle inspection before shipment:</p>
+                <ul>
+                    <li>Detailed photo reports</li>
+                    <li>Mechanical inspection</li>
+                    <li>Accident history check</li>
+                    <li>Mileage verification</li>
+                    <li>Quality assurance</li>
+                </ul>
+            </div>
         </div>
-        <div id="resultBox" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none;">
-            <h3 style="margin: 0;">Total Shipping Cost: <span id="totalDisplay" style="color: #B22222; font-size: 1.8rem;">¥0</span></h3>
-        </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    function updateCalculation() {
-        const rate = parseFloat(document.getElementById('portSelect').value);
-        const m3 = parseFloat(document.getElementById('sizeSelect').value);
-        const curr = document.getElementById('currencySelect').value;
-        if (rate > 0 && m3 > 0) {
-            let total = rate * m3;
-            if (curr === 'USD') {
-                total = Math.round(total / 150); // Using 150 as the fixed JPY/USD rate
-                document.getElementById('totalDisplay').innerText = '$' + total.toLocaleString();
-            } else {
-                document.getElementById('totalDisplay').innerText = '¥' + Math.round(total).toLocaleString();
-            }
-            document.getElementById('resultBox').style.display = 'block';
+    <!-- Vehicle Categories -->
+    <section class="vehicle-categories" id="vehicles">
+        <div class="section-title">
+            <h2>VEHICLE CATEGORIES</h2>
+            <p>Browse our extensive inventory of Japanese vehicles</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">🚙</div>
+                <h3>Sedans</h3>
+                <p>Toyota Camry, Honda Accord, Nissan Altima, Mazda 6</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🏔️</div>
+                <h3>SUVs</h3>
+                <p>Toyota Land Cruiser, Honda CR-V, Nissan X-Trail, Mazda CX-5</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🚐</div>
+                <h3>Vans & Minivans</h3>
+                <p>Toyota Hiace, Nissan Caravan, Honda Stepwgn</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🚚</div>
+                <h3>Trucks</h3>
+                <p>Toyota Hilux, Isuzu D-Max, Mitsubishi Triton</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🏁</div>
+                <h3>Sports Cars</h3>
+                <p>Nissan GT-R, Toyota Supra, Mazda RX-7, Honda NSX</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🚛</div>
+                <h3>Commercial</h3>
+                <p>Buses, dump trucks, cargo vehicles</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">⚡</div>
+                <h3>Hybrid/Electric</h3>
+                <p>Toyota Prius, Nissan Leaf, Honda Insight</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🏛️</div>
+                <h3>Classic JDM</h3>
+                <p>Vintage models and collectors' vehicles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Methods -->
+    <section class="shipping" id="shipping">
+        <div class="section-title" style="color: white;">
+            <h2>SHIPPING SOLUTIONS</h2>
+            <p style="color: rgba(255,255,255,0.7);">Professional logistics for seamless international delivery</p>
+        </div>
+        <div class="shipping-container">
+            <div class="shipping-method">
+                <h3>🚢 RO-RO SHIPPING</h3>
+                <p>Roll-on/Roll-off shipping is the most economical method for vehicle transport. Your vehicle is driven onto the vessel and secured for the journey.</p>
+                <ul class="shipping-features">
+                    <li>Most cost-effective option</li>
+                    <li>Suitable for running vehicles</li>
+                    <li>Weekly departures to major ports</li>
+                    <li>Transit time: 2-8 weeks depending on destination</li>
+                    <li>Coverage: Africa, Middle East, Europe, Oceania, Caribbean</li>
+                    <li>Insurance coverage available</li>
+                    <li>Full tracking and documentation</li>
+                </ul>
+            </div>
+            <div class="shipping-method">
+                <h3>📦 CONTAINER SHIPPING</h3>
+                <p>For maximum protection and security, container shipping is ideal. Perfect for non-running vehicles, multiple units, or spare parts.</p>
+                <ul class="shipping-features">
+                    <li>Enhanced security and protection</li>
+                    <li>20ft containers: 1-2 vehicles</li>
+                    <li>40ft containers: 2-4 vehicles</li>
+                    <li>Suitable for non-running vehicles</li>
+                    <li>Ideal for spare parts consolidation</li>
+                    <li>Door-to-door delivery options</li>
+                    <li>Weather-proof transportation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spare Parts Section -->
+    <section class="services" id="parts" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="section-title">
+            <h2>JAPANESE SPARE PARTS</h2>
+            <p>Genuine and aftermarket parts for all Japanese vehicle makes</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Engine Components</h3>
+                <ul>
+                    <li>Complete engines & transmissions</li>
+                    <li>Cylinder heads & gaskets</li>
+                    <li>Pistons & crankshafts</li>
+                    <li>Timing belts & chains</li>
+                    <li>Oil pumps & filters</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Body Parts</h3>
+                <ul>
+                    <li>Hoods, doors, fenders</li>
+                    <li>Bumpers & grilles</li>
+                    <li>Headlights & taillights</li>
+                    <li>Mirrors & door handles</li>
+                    <li>Windshields & glass</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Suspension & Brakes</h3>
+                <ul>
+                    <li>Shock absorbers & struts</li>
+                    <li>Control arms & ball joints</li>
+                    <li>Brake pads & rotors</li>
+                    <li>Brake calipers & lines</li>
+                    <li>Coil springs & bushings</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="section-title">
+            <h2>WHY CHOOSE STL WORLD NETWORK LLC</h2>
+            <p>Your trusted partner in Japanese vehicle exports</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <h3>Quality Assurance</h3>
+                <p>Every vehicle undergoes thorough inspection with detailed photo reports. We verify mileage, check accident history, and ensure mechanical soundness.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Direct access to Japanese auctions and dealers means better prices. No intermediaries, transparent pricing, and flexible payment options.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌍</div>
+                <h3>STL WORLD NETWORK LLC</h3>
+                <p>We ship to over 80 countries with established partnerships at major ports worldwide. Reliable logistics and customs support.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <h3>Real-Time Tracking</h3>
+                <p>Track your vehicle from purchase to delivery with our online system. Regular updates via email and WhatsApp.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <h3>Secure Transactions</h3>
+                <p>Multiple secure payment methods accepted. Full insurance coverage options available for complete peace of mind.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <h3>Expert Support</h3>
+                <p>Multilingual team available 24/7 to assist with your inquiries. Personalized service from order to delivery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="quote-section" id="quote">
+        <div class="section-title">
+            <h2>REQUEST A QUOTE</h2>
+            <p>Get a customized quote for your vehicle or shipping needs</p>
+        </div>
+        <form class="quote-form" onsubmit="handleQuoteSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" required placeholder="+1234567890">
+                </div>
+                <div class="form-group">
+                    <label>Country/Region *</label>
+                    <input type="text" required placeholder="Your country">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Service Required *</label>
+                <select required>
+                    <option value="">-- Select Service --</option>
+                    <option>Vehicle Purchase & Export</option>
+                    <option>Ro-Ro Shipping</option>
+                    <option>Container Shipping</option>
+                    <option>Spare Parts</option>
+                    <option>Multiple Services</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Vehicle Details</label>
+                <input type="text" placeholder="e.g., Toyota Land Cruiser 2015">
+            </div>
+
+            <div class="form-group">
+                <label>Destination Port</label>
+                <input type="text" placeholder="e.g., Mombasa, Kenya">
+            </div>
+
+            <div class="form-group full-width">
+                <label>Additional Requirements</label>
+                <textarea placeholder="Tell us more about your needs, budget, timeline, or any special requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Quote Request</button>
+        </form>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>WHAT OUR CLIENTS SAY</h2>
+            <p>Trusted by customers worldwide</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">Exceptional service from start to finish. My Toyota Land Cruiser arrived in perfect condition to Nairobi. The team handled all documentation and kept me updated throughout the shipping process.</p>
+                    <p class="testimonial-author">Mohammed Al-Rashid</p>
+                    <p class="testimonial-location">Dubai, UAE</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">I've been importing spare parts for my garage for 3 years now. Always genuine parts, competitive prices, and fast shipping. Highly recommended for businesses!</p>
+                    <p class="testimonial-author">James Okello</p>
+                    <p class="testimonial-location">Kampala, Uganda</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">Professional team that understands the car export business. They helped me source a specific Honda Civic model and arranged competitive Ro-Ro shipping to Port of Spain.</p>
+                    <p class="testimonial-author">Carlos Martinez</p>
+                    <p class="testimonial-location">Trinidad & Tobago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>JDM Global Export</h3>
+                <p>Your premier partner for Japanese vehicle exports and spare parts worldwide. We connect you directly to Japan's automotive excellence with complete shipping solutions.</p>
+                <p><strong>Head Office:</strong><br>
+                Tokyo, Japan</p>
+                <p><strong>Operating Hours:</strong><br>
+                Monday - Saturday: 9:00 AM - 6:00 PM JST<br>
+                Sunday: Closed</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#vehicles">Vehicle Inventory</a></li>
+                    <li><a href="#shipping">Shipping Methods</a></li>
+                    <li><a href="#parts">Spare Parts</a></li>
+                    <li><a href="#quote">Request Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Vehicle Export</a></li>
+                    <li><a href="#shipping">Ro-Ro Shipping</a></li>
+                    <li><a href="#shipping">Container Shipping</a></li>
+                    <li><a href="#parts">Spare Parts Supply</a></li>
+                    <li><a href="#services">Documentation</a></li>
+                    <li><a href="#services">Pre-Inspection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong><br>
+                sblogistics@stl-wn.com<br>
+                 sblogistics@stl-wn.com</p>
+                <p><strong>Phone:</strong><br>
+                +81-80-1571-0834</p>
+                +81-29-956-4685</p>
+                <p><strong>WhatsApp:</strong><br>
+                +81-80-1571-0834</p>
+                <p><strong>WeChat/Line:</strong> Available</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 STL WORLD NETWORK LLC. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        function handleQuoteSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your quote request! Our team will contact you within 24 hours.');
+            event.target.reset();
         }
-    }
-</script>
 
-    
-<footer>
-    <p><strong>STL WORLD NETWORK LLC</strong></p>
-    <p>Yokohama / Tokyo, Japan | WhatsApp: +81 80 1571 0834</p>
-    <p>&copy; 2026 Japan Export Support</p>
-</footer>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-<script>
-function filterStock() {
-    let input = document.getElementById('search').value.toUpperCase();
-    let cards = document.getElementsByClassName('car-card');
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].querySelector('h3').innerText;
-        cards[i].style.display = title.toUpperCase().indexOf(input) > -1 ? "" : "none";
-    }
-}
-</script>
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .category-card, .feature-item, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
-
-
-
-       
-              
-
-
-
-
-
-
