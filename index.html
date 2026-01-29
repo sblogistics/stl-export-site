@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STL WORLD NETWORK LLC| Japanese Vehicles & Spare Parts Worldwide</title>
+    <title>STL WORLD NETWORK LLC - Premium Japanese Used Cars & Export Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #C8102E;
-            --dark-navy: #0A1628;
-            --light-gray: #F5F5F5;
-            --accent-orange: #FF6B35;
-            --text-dark: #1A1A1A;
-            --text-light: #6B6B6B;
-            --border-color: #E0E0E0;
+            --primary-blue: #1E40AF;
+            --dark-blue: #0F172A;
+            --accent-orange: #F97316;
+            --light-gray: #F8FAFC;
+            --border-color: #E2E8F0;
+            --text-dark: #0F172A;
+            --text-light: #64748B;
+            --success-green: #10B981;
         }
 
         * {
@@ -25,40 +26,49 @@
         }
 
         body {
-            font-family: 'Archivo', sans-serif;
+            font-family: 'Outfit', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Header & Navigation */
-        header {
-            background: var(--dark-navy);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
+        /* Top Bar */
         .top-bar {
-            background: var(--primary-red);
+            background: var(--dark-blue);
             color: white;
-            padding: 8px 0;
+            padding: 10px 0;
             font-size: 0.85rem;
         }
 
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .top-bar-content {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .contact-info span {
-            margin-right: 25px;
+        .top-bar-left span {
+            margin-right: 20px;
+        }
+
+        .top-bar-right select {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav {
@@ -71,133 +81,217 @@
         }
 
         .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: white;
-            letter-spacing: 2px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
         }
 
         .logo span {
-            color: var(--primary-red);
+            color: var(--accent-orange);
         }
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 500;
             transition: color 0.3s;
             font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .nav-links a:hover {
-            color: var(--primary-red);
+            color: var(--primary-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-blue);
+            color: white;
         }
 
         /* Hero Section */
         .hero {
-            margin-top: 110px;
-            height: 85vh;
-            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2740 100%);
+            background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+            color: white;
+            padding: 80px 40px 120px;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.8;
         }
 
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
             position: relative;
             z-index: 2;
         }
 
         .hero h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: white;
-            line-height: 1;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            letter-spacing: 3px;
+            line-height: 1.1;
         }
 
         .hero h1 span {
-            color: var(--primary-red);
+            color: var(--accent-orange);
             display: block;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
+            margin-top: 10px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
+        .hero-subtitle {
+            font-size: 1.3rem;
             margin-bottom: 40px;
+            opacity: 0.95;
             max-width: 600px;
-            font-weight: 300;
         }
 
-        .cta-buttons {
+        .vehicle-count {
+            display: inline-block;
+            background: var(--accent-orange);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Search Box */
+        .search-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            max-width: 1200px;
+            margin: -80px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-tabs {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .btn {
-            padding: 15px 40px;
-            text-decoration: none;
+        .search-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
             font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .search-tab.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-field {
+            position: relative;
+        }
+
+        .search-field label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .search-field select,
+        .search-field input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: 'Outfit', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .search-field select:focus,
+        .search-field input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .search-button {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
         }
 
-        .btn-primary {
-            background: var(--primary-red);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #A00D24;
+        .search-button:hover {
+            background: #EA580C;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(200, 16, 46, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark-navy);
+            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.4);
         }
 
         /* Stats Section */
         .stats {
-            background: var(--primary-red);
-            color: white;
-            padding: 60px 40px;
+            background: var(--light-gray);
+            padding: 80px 40px;
         }
 
         .stats-container {
@@ -206,44 +300,155 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 40px;
+        }
+
+        .stat-card {
             text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        .stat-item h3 {
-            font-family: 'Bebas Neue', sans-serif;
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
             font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            background: var(--light-gray);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
-            color: var(--dark-navy);
-            letter-spacing: 2px;
             margin-bottom: 15px;
         }
 
-        .section-title p {
+        .stat-number {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
             color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Popular Makes */
+        .popular-makes {
+            padding: 80px 40px;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
             font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .makes-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .make-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .make-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+        }
+
+        .make-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .make-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .make-count {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Body Types */
+        .body-types {
+            padding: 80px 40px;
+            background: var(--light-gray);
+        }
+
+        .body-types-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+
+        .body-type-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .body-type-card:hover {
+            border-color: var(--accent-orange);
+            transform: scale(1.05);
+        }
+
+        .body-type-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .body-type-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .body-type-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Featured Services */
+        .featured-services {
+            padding: 80px 40px;
         }
 
         .services-grid {
@@ -251,48 +456,58 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1E3A8A 100%);
+            color: white;
             padding: 40px;
-            border-left: 4px solid var(--primary-red);
-            transition: all 0.3s;
-            cursor: pointer;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .service-card-content {
+            position: relative;
+            z-index: 2;
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: var(--primary-red);
         }
 
         .service-card h3 {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 15px;
-            letter-spacing: 1px;
         }
 
         .service-card p {
-            color: var(--text-light);
+            opacity: 0.9;
             line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         .service-card ul {
-            margin-top: 15px;
             list-style: none;
+            margin-bottom: 25px;
         }
 
         .service-card ul li {
             padding: 8px 0;
-            color: var(--text-light);
             position: relative;
             padding-left: 25px;
         }
@@ -301,169 +516,36 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--primary-red);
             font-weight: bold;
         }
 
-        /* Vehicle Categories */
-        .vehicle-categories {
-            padding: 100px 40px;
-            background: white;
-        }
-
-        .categories-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .category-card {
-            background: var(--light-gray);
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .category-card:hover {
-            border-color: var(--primary-red);
-            transform: scale(1.05);
-        }
-
-        .category-icon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-        }
-
-        .category-card h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        /* Shipping Section */
-        .shipping {
-            padding: 100px 40px;
-            background: var(--dark-navy);
+        .service-link {
             color: white;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .shipping-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-        }
-
-        .shipping-method {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-left: 4px solid var(--accent-orange);
-        }
-
-        .shipping-method h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .shipping-method p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .shipping-features {
-            list-style: none;
-            margin-top: 25px;
-        }
-
-        .shipping-features li {
-            padding: 10px 0;
-            color: rgba(255,255,255,0.9);
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .shipping-features li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-        }
-
-        /* Quote Form */
-        .quote-section {
-            padding: 100px 40px;
-            background: var(--light-gray);
-        }
-
-        .quote-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid var(--border-color);
-            font-family: 'Archivo', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-red);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+        .service-link:hover {
+            gap: 15px;
         }
 
         /* Why Choose Us */
         .why-choose {
-            padding: 100px 40px;
-            background: white;
+            padding: 80px 40px;
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .why-choose .section-header h2,
+        .why-choose .section-header p {
+            color: white;
+        }
+
+        .why-choose .section-header p {
+            opacity: 0.8;
         }
 
         .features-grid {
@@ -474,85 +556,144 @@
             gap: 40px;
         }
 
-        .feature-item {
+        .feature-card {
             text-align: center;
-            padding: 30px;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-red);
-            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
         }
 
-        .feature-item h3 {
-            font-family: 'Bebas Neue', sans-serif;
+        .feature-card h3 {
+            font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 15px;
-            letter-spacing: 1px;
         }
 
-        .feature-item p {
-            color: var(--text-light);
+        .feature-card p {
+            opacity: 0.85;
             line-height: 1.8;
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 40px;
-            background: var(--light-gray);
+        /* Inventory Locations */
+        .inventory-locations {
+            padding: 80px 40px;
         }
 
-        .testimonials-grid {
+        .locations-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
 
-        .testimonial-card {
+        .location-card {
             background: white;
-            padding: 35px;
-            position: relative;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .testimonial-card::before {
-            content: '"';
-            font-size: 5rem;
-            color: var(--primary-red);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-family: Georgia, serif;
+        .location-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
+        .location-flag {
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
 
-        .testimonial-text {
+        .location-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .location-count {
             color: var(--text-light);
-            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #EA580C 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            font-style: italic;
         }
 
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--text-dark);
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
 
-        .testimonial-location {
-            color: var(--text-light);
-            font-size: 0.9rem;
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-cta {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent-orange);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--accent-orange);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-navy);
+            background: var(--dark-blue);
             color: white;
             padding: 60px 40px 30px;
         }
@@ -561,20 +702,20 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 50px;
             margin-bottom: 40px;
         }
 
         .footer-section h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: 1px;
         }
 
         .footer-section p {
-            color: rgba(255,255,255,0.7);
+            opacity: 0.8;
             line-height: 1.8;
             margin-bottom: 20px;
         }
@@ -584,579 +725,689 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--primary-red);
+            color: var(--accent-orange);
         }
 
         .footer-bottom {
-            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0.7;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .animate-on-scroll {
-            animation: fadeInUp 0.8s ease-out;
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
         }
 
-        /* Responsive Design */
+        .social-links a:hover {
+            background: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            .services-grid,
-            .categories-grid,
-            .features-grid,
-            .testimonials-grid {
+            .search-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .shipping-container {
-                grid-template-columns: 1fr;
+            .makes-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
 
-            .footer-content {
+            .body-types-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-container,
+            .locations-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 span {
+                font-size: 1.8rem;
+            }
+
+            .search-grid,
+            .makes-grid,
+            .body-types-grid,
+            .services-grid,
+            .features-grid,
+            .stats-container,
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
             .nav-links {
                 display: none;
             }
 
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero h1 span {
-                font-size: 2.5rem;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .services-grid,
-            .categories-grid,
-            .features-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-grid {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
 
             .cta-buttons {
                 flex-direction: column;
             }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <span>📞 +81-80-1571-0834</span>
-                    <span>✉️ sblogistics@stl-wn.com</span>
-                </div>
-                <div class="language">
-                    🌐 EN | JP | FR | ES | AR
-                </div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📞 +81-XXX-XXXX-XXXX</span>
+                <span>✉️ info@stlworldnetwork.com</span>
+            </div>
+            <div class="top-bar-right">
+                <select>
+                    <option>English</option>
+                    <option>日本語</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                    <option>Русский</option>
+                </select>
+                <select>
+                    <option>USD ($)</option>
+                    <option>JPY (¥)</option>
+                    <option>EUR (€)</option>
+                    <option>GBP (£)</option>
+                </select>
             </div>
         </div>
+    </div>
+
+    <!-- Header -->
+    <header>
         <nav>
-            <div class="logo">STL<span>WORLD NETWORK LLC</span></div>
+            <div class="logo">STL WORLD <span>NETWORK</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#vehicles">Vehicles</a></li>
+                <li><a href="#inventory">Find Cars</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
                 <li><a href="#shipping">Shipping</a></li>
-                <li><a href="#parts">Spare Parts</a></li>
-                <li><a href="#quote">Get Quote</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#support">Support</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="btn-login">Login / Sign Up</button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <h1>
-                JAPANESE VEHICLES
-                <span>DELIVERED WORLDWIDE</span>
+                DRIVE WHAT'S NEXT
+                <span>Premium Japanese Used Cars</span>
             </h1>
-            <p>Premium Japanese cars, trucks, and spare parts exported globally with complete shipping solutions. Experience seamless Ro-Ro and container shipping services.</p>
-            <div class="cta-buttons">
-                <a href="#quote" class="btn btn-primary">Request Quote</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
-            </div>
+            <p class="hero-subtitle">Access to 254,695+ quality vehicles from Japan, Korea, UK, UAE & more. Direct export worldwide with complete shipping solutions.</p>
+            <div class="vehicle-count">🚗 254,695 Cars Available</div>
         </div>
     </section>
+
+    <!-- Search Box -->
+    <div class="search-box" id="inventory">
+        <div class="search-tabs">
+            <div class="search-tab active">Make & Model</div>
+            <div class="search-tab">Body Type</div>
+            <div class="search-tab">Price Range</div>
+        </div>
+        
+        <form id="searchForm">
+            <div class="search-grid">
+                <div class="search-field">
+                    <label>Make</label>
+                    <select name="make">
+                        <option value="">Select Make</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Mazda">Mazda</option>
+                        <option value="Suzuki">Suzuki</option>
+                        <option value="Mitsubishi">Mitsubishi</option>
+                        <option value="Subaru">Subaru</option>
+                        <option value="Lexus">Lexus</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Model</label>
+                    <input type="text" name="model" placeholder="e.g., Land Cruiser">
+                </div>
+                
+                <div class="search-field">
+                    <label>Body Type</label>
+                    <select name="body_type">
+                        <option value="">All Types</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Wagon">Wagon</option>
+                        <option value="Van">Van</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Year From</label>
+                    <select name="year">
+                        <option value="">Any Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2015">2015</option>
+                        <option value="2010">2010</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Max Price (USD)</label>
+                    <select name="price">
+                        <option value="">Any Price</option>
+                        <option value="5000">Under $5,000</option>
+                        <option value="10000">Under $10,000</option>
+                        <option value="15000">Under $15,000</option>
+                        <option value="20000">Under $20,000</option>
+                        <option value="30000">Under $30,000</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Mileage (km)</label>
+                    <select name="mileage">
+                        <option value="">Any Mileage</option>
+                        <option value="50000">Under 50,000</option>
+                        <option value="100000">Under 100,000</option>
+                        <option value="150000">Under 150,000</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Transmission</label>
+                    <select name="transmission">
+                        <option value="">Any</option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </div>
+                
+                <div class="search-field">
+                    <label>Fuel Type</label>
+                    <select name="fuel">
+                        <option value="">Any</option>
+                        <option value="Gasoline">Gasoline</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="search-button">🔍 Search 254,695 Cars</button>
+        </form>
+    </div>
 
     <!-- Stats Section -->
     <section class="stats">
         <div class="stats-container">
-            <div class="stat-item">
-                <h3>15+</h3>
-                <p>Years Experience</p>
+            <div class="stat-card">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Countries Served</div>
             </div>
-            <div class="stat-item">
-                <h3>5000+</h3>
-                <p>Vehicles Exported</p>
+            <div class="stat-card">
+                <div class="stat-icon">🚗</div>
+                <div class="stat-number">2M+</div>
+                <div class="stat-label">Cars Exported</div>
             </div>
-            <div class="stat-item">
-                <h3>80+</h3>
-                <p>Countries Served</p>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Years Experience</div>
             </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Customer Satisfaction</p>
+            <div class="stat-card">
+                <div class="stat-icon">😊</div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction Rate</div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>OUR COMPREHENSIVE SERVICES</h2>
-            <p>End-to-end solutions for your Japanese vehicle import needs</p>
+    <!-- Popular Makes -->
+    <section class="popular-makes">
+        <div class="section-header">
+            <h2>Browse by Car Brand</h2>
+            <p>Access premium Japanese and international car brands</p>
+        </div>
+        <div class="makes-grid">
+            <div class="make-card">
+                <div class="make-logo">🚙</div>
+                <div class="make-name">Toyota</div>
+                <div class="make-count">(59,267 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚗</div>
+                <div class="make-name">Honda</div>
+                <div class="make-count">(19,480 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚕</div>
+                <div class="make-name">Nissan</div>
+                <div class="make-count">(20,339 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🏎️</div>
+                <div class="make-name">Mazda</div>
+                <div class="make-count">(7,480 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚐</div>
+                <div class="make-name">Suzuki</div>
+                <div class="make-count">(18,689 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚙</div>
+                <div class="make-name">Mitsubishi</div>
+                <div class="make-count">(5,579 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚗</div>
+                <div class="make-name">Subaru</div>
+                <div class="make-count">(8,230 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚘</div>
+                <div class="make-name">Lexus</div>
+                <div class="make-count">(1,836 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚙</div>
+                <div class="make-name">BMW</div>
+                <div class="make-count">(10,933 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🏎️</div>
+                <div class="make-name">Mercedes</div>
+                <div class="make-count">(8,973 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚗</div>
+                <div class="make-name">Hyundai</div>
+                <div class="make-count">(15,750 cars)</div>
+            </div>
+            <div class="make-card">
+                <div class="make-logo">🚕</div>
+                <div class="make-name">Kia</div>
+                <div class="make-count">(18,154 cars)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Body Types -->
+    <section class="body-types">
+        <div class="section-header">
+            <h2>Browse by Body Type</h2>
+            <p>Find the perfect vehicle for your needs</p>
+        </div>
+        <div class="body-types-grid">
+            <div class="body-type-card">
+                <div class="body-type-icon">🚗</div>
+                <div class="body-type-name">Sedan</div>
+                <div class="body-type-count">(52,376 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚙</div>
+                <div class="body-type-name">SUV</div>
+                <div class="body-type-count">(60,946 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚕</div>
+                <div class="body-type-name">Hatchback</div>
+                <div class="body-type-count">(43,651 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚐</div>
+                <div class="body-type-name">Van</div>
+                <div class="body-type-count">(34,438 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚚</div>
+                <div class="body-type-name">Truck</div>
+                <div class="body-type-count">(11,255 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🏎️</div>
+                <div class="body-type-name">Coupe</div>
+                <div class="body-type-count">(6,755 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚗</div>
+                <div class="body-type-name">Wagon</div>
+                <div class="body-type-count">(20,142 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🏁</div>
+                <div class="body-type-name">Convertible</div>
+                <div class="body-type-count">(3,062 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚌</div>
+                <div class="body-type-name">Bus</div>
+                <div class="body-type-count">(175 cars)</div>
+            </div>
+            <div class="body-type-card">
+                <div class="body-type-icon">🚜</div>
+                <div class="body-type-name">Heavy Equipment</div>
+                <div class="body-type-count">(1,234 units)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="featured-services" id="how-to-buy">
+        <div class="section-header">
+            <h2>Complete Export Solutions</h2>
+            <p>End-to-end services for seamless vehicle export</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>Vehicle Export</h3>
-                <p>Direct access to Japanese auctions and dealers. We source and export all types of vehicles including:</p>
-                <ul>
-                    <li>Passenger cars (sedan, SUV, hatchback)</li>
-                    <li>Commercial vehicles & trucks</li>
-                    <li>Buses & heavy machinery</li>
-                    <li>Classic & vintage JDM cars</li>
-                    <li>Hybrid & electric vehicles</li>
-                </ul>
+                <div class="service-card-content">
+                    <div class="service-icon">🚢</div>
+                    <h3>Ro-Ro Shipping</h3>
+                    <p>Cost-effective roll-on/roll-off shipping to major ports worldwide</p>
+                    <ul>
+                        <li>Weekly departures</li>
+                        <li>Competitive freight rates</li>
+                        <li>Full insurance coverage</li>
+                        <li>Real-time tracking</li>
+                    </ul>
+                    <a href="#shipping" class="service-link">Learn More →</a>
+                </div>
             </div>
+            
             <div class="service-card">
-                <div class="service-icon">🚢</div>
-                <h3>Ro-Ro Shipping</h3>
-                <p>Roll-on/Roll-off shipping for cost-effective vehicle transport:</p>
-                <ul>
-                    <li>Direct port-to-port service</li>
-                    <li>Weekly departures worldwide</li>
-                    <li>Insurance coverage included</li>
-                    <li>Competitive freight rates</li>
-                    <li>Full tracking & documentation</li>
-                </ul>
+                <div class="service-card-content">
+                    <div class="service-icon">📦</div>
+                    <h3>Container Shipping</h3>
+                    <p>Secure container shipping for maximum protection</p>
+                    <ul>
+                        <li>20ft & 40ft containers</li>
+                        <li>Multiple vehicles per container</li>
+                        <li>Weather-proof transport</li>
+                        <li>Door-to-door delivery</li>
+                    </ul>
+                    <a href="#shipping" class="service-link">Learn More →</a>
+                </div>
             </div>
+            
             <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3>Container Shipping</h3>
-                <p>Secure container shipping for vehicles and spare parts:</p>
-                <ul>
-                    <li>20ft & 40ft container options</li>
-                    <li>Multiple vehicles per container</li>
-                    <li>Spare parts consolidation</li>
-                    <li>Door-to-door delivery available</li>
-                    <li>Maximum protection & security</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Spare Parts Supply</h3>
-                <p>Genuine Japanese spare parts for all makes and models:</p>
-                <ul>
-                    <li>Engine & transmission parts</li>
-                    <li>Body panels & accessories</li>
-                    <li>Electrical components</li>
-                    <li>Interior & exterior parts</li>
-                    <li>Performance upgrades</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📋</div>
-                <h3>Documentation & Customs</h3>
-                <p>Complete paperwork and customs clearance support:</p>
-                <ul>
-                    <li>Export certificates</li>
-                    <li>Bill of lading</li>
-                    <li>Insurance documents</li>
-                    <li>Customs declaration</li>
-                    <li>Registration assistance</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Pre-Inspection</h3>
-                <p>Thorough vehicle inspection before shipment:</p>
-                <ul>
-                    <li>Detailed photo reports</li>
-                    <li>Mechanical inspection</li>
-                    <li>Accident history check</li>
-                    <li>Mileage verification</li>
-                    <li>Quality assurance</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vehicle Categories -->
-    <section class="vehicle-categories" id="vehicles">
-        <div class="section-title">
-            <h2>VEHICLE CATEGORIES</h2>
-            <p>Browse our extensive inventory of Japanese vehicles</p>
-        </div>
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-icon">🚙</div>
-                <h3>Sedans</h3>
-                <p>Toyota Camry, Honda Accord, Nissan Altima, Mazda 6</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🏔️</div>
-                <h3>SUVs</h3>
-                <p>Toyota Land Cruiser, Honda CR-V, Nissan X-Trail, Mazda CX-5</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🚐</div>
-                <h3>Vans & Minivans</h3>
-                <p>Toyota Hiace, Nissan Caravan, Honda Stepwgn</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🚚</div>
-                <h3>Trucks</h3>
-                <p>Toyota Hilux, Isuzu D-Max, Mitsubishi Triton</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🏁</div>
-                <h3>Sports Cars</h3>
-                <p>Nissan GT-R, Toyota Supra, Mazda RX-7, Honda NSX</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🚛</div>
-                <h3>Commercial</h3>
-                <p>Buses, dump trucks, cargo vehicles</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">⚡</div>
-                <h3>Hybrid/Electric</h3>
-                <p>Toyota Prius, Nissan Leaf, Honda Insight</p>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🏛️</div>
-                <h3>Classic STL</h3>
-                <p>Vintage models and collectors' vehicles</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shipping Methods -->
-    <section class="shipping" id="shipping">
-        <div class="section-title" style="color: white;">
-            <h2>SHIPPING SOLUTIONS</h2>
-            <p style="color: rgba(255,255,255,0.7);">Professional logistics for seamless international delivery</p>
-        </div>
-        <div class="shipping-container">
-            <div class="shipping-method">
-                <h3>🚢 RO-RO SHIPPING</h3>
-                <p>Roll-on/Roll-off shipping is the most economical method for vehicle transport. Your vehicle is driven onto the vessel and secured for the journey.</p>
-                <ul class="shipping-features">
-                    <li>Most cost-effective option</li>
-                    <li>Suitable for running vehicles</li>
-                    <li>Weekly departures to major ports</li>
-                    <li>Transit time: 2-8 weeks depending on destination</li>
-                    <li>Coverage: Africa, Middle East, Europe, Oceania, Caribbean</li>
-                    <li>Insurance coverage available</li>
-                    <li>Full tracking and documentation</li>
-                </ul>
-            </div>
-            <div class="shipping-method">
-                <h3>📦 CONTAINER SHIPPING</h3>
-                <p>For maximum protection and security, container shipping is ideal. Perfect for non-running vehicles, multiple units, or spare parts.</p>
-                <ul class="shipping-features">
-                    <li>Enhanced security and protection</li>
-                    <li>20ft containers: 1-2 vehicles</li>
-                    <li>40ft containers: 2-4 vehicles</li>
-                    <li>Suitable for non-running vehicles</li>
-                    <li>Ideal for spare parts consolidation</li>
-                    <li>Door-to-door delivery options</li>
-                    <li>Weather-proof transportation</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Spare Parts Section -->
-    <section class="services" id="parts" style="padding-top: 100px; padding-bottom: 100px;">
-        <div class="section-title">
-            <h2>JAPANESE SPARE PARTS</h2>
-            <p>Genuine and aftermarket parts for all Japanese vehicle makes</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Engine Components</h3>
-                <ul>
-                    <li>Complete engines & transmissions</li>
-                    <li>Cylinder heads & gaskets</li>
-                    <li>Pistons & crankshafts</li>
-                    <li>Timing belts & chains</li>
-                    <li>Oil pumps & filters</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Body Parts</h3>
-                <ul>
-                    <li>Hoods, doors, fenders</li>
-                    <li>Bumpers & grilles</li>
-                    <li>Headlights & taillights</li>
-                    <li>Mirrors & door handles</li>
-                    <li>Windshields & glass</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Suspension & Brakes</h3>
-                <ul>
-                    <li>Shock absorbers & struts</li>
-                    <li>Control arms & ball joints</li>
-                    <li>Brake pads & rotors</li>
-                    <li>Brake calipers & lines</li>
-                    <li>Coil springs & bushings</li>
-                </ul>
+                <div class="service-card-content">
+                    <div class="service-icon">🔧</div>
+                    <h3>Spare Parts Export</h3>
+                    <p>Genuine Japanese spare parts for all makes and models</p>
+                    <ul>
+                        <li>Engine & transmission parts</li>
+                        <li>Body panels & accessories</li>
+                        <li>Consolidated shipping</li>
+                        <li>Quality guaranteed</li>
+                    </ul>
+                    <a href="#support" class="service-link">Learn More →</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-choose">
-        <div class="section-title">
-            <h2>WHY CHOOSE STL WORLD NETWORK LLC</h2>
+    <section class="why-choose" id="why-us">
+        <div class="section-header">
+            <h2>Why Choose STL World Network</h2>
             <p>Your trusted partner in Japanese vehicle exports</p>
         </div>
         <div class="features-grid">
-            <div class="feature-item">
+            <div class="feature-card">
                 <div class="feature-icon">✓</div>
                 <h3>Quality Assurance</h3>
-                <p>Every vehicle undergoes a thorough inspection with detailed photo reports. We verify mileage, check accident history, and ensure mechanical soundness.</p>
+                <p>Every vehicle undergoes thorough inspection with detailed photo reports. We verify mileage, check accident history, and ensure mechanical soundness before shipping.</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>USS & Arai Member</h3>
+                <p>Direct access to Japan's top auction houses. No intermediaries, better prices, and first selection of premium vehicles from USS and Arai auctions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Global Network</h3>
+                <p>Offices in 30+ countries with established partnerships at major ports. Reliable logistics, customs support, and local assistance worldwide.</p>
+            </div>
+            <div class="feature-card">
                 <div class="feature-icon">💰</div>
-                <h3>Competitive Pricing</h3>
-                <p>Direct access to Japanese auctions and dealers means better prices. No intermediaries, transparent pricing, and flexible payment options.</p>
+                <h3>Best Prices</h3>
+                <p>Competitive pricing with transparent cost breakdown. No hidden fees. Flexible payment options with secure transactions guaranteed.</p>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌍</div>
-                <h3>STL WORLD NETWORK LLC</h3>
-                <p>We ship to over 80 countries with established partnerships at major ports worldwide. Reliable logistics and customs support.</p>
-            </div>
-            <div class="feature-item">
+            <div class="feature-card">
                 <div class="feature-icon">📱</div>
                 <h3>Real-Time Tracking</h3>
-                <p>Track your vehicle from purchase to delivery with our online system. Regular updates via email and WhatsApp.</p>
+                <p>Track your vehicle from auction to delivery with our online system. Regular updates via email and WhatsApp throughout the shipping process.</p>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🛡️</div>
-                <h3>Secure Transactions</h3>
-                <p>Multiple secure payment methods accepted. Full insurance coverage options are available for complete peace of mind.</p>
-            </div>
-            <div class="feature-item">
+            <div class="feature-card">
                 <div class="feature-icon">🤝</div>
-                <h3>Expert Support</h3>
-                <p>Multilingual team available 24/7 to assist with your inquiries. Personalized service from order to delivery.</p>
+                <h3>24/7 Support</h3>
+                <p>Multilingual team available around the clock. Personalized service from order to delivery. We're here to help every step of the way.</p>
             </div>
         </div>
     </section>
 
-    <!-- Quote Form -->
-    <section class="quote-section" id="quote">
-        <div class="section-title">
-            <h2>REQUEST A QUOTE</h2>
-            <p>Get a customized quote for your vehicle or shipping needs</p>
+    <!-- Inventory Locations -->
+    <section class="inventory-locations">
+        <div class="section-header">
+            <h2>Browse by Inventory Location</h2>
+            <p>Vehicles available from multiple countries</p>
         </div>
-        <form class="quote-form" onsubmit="handleQuoteSubmit(event)">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" required placeholder="Your full name">
-                </div>
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" required placeholder="+1234567890">
-                </div>
-                <div class="form-group">
-                    <label>Country/Region *</label>
-                    <input type="text" required placeholder="Your country">
-                </div>
+        <div class="locations-grid">
+            <div class="location-card">
+                <div class="location-flag">🇯🇵</div>
+                <div class="location-name">Japan</div>
+                <div class="location-count">166,181 cars</div>
             </div>
-            
-            <div class="form-group">
-                <label>Service Required *</label>
-                <select required>
-                    <option value="">-- Select Service --</option>
-                    <option>Vehicle Purchase & Export</option>
-                    <option>Ro-Ro Shipping</option>
-                    <option>Container Shipping</option>
-                    <option>Spare Parts</option>
-                    <option>Multiple Services</option>
-                </select>
+            <div class="location-card">
+                <div class="location-flag">🇰🇷</div>
+                <div class="location-name">Korea</div>
+                <div class="location-count">72,547 cars</div>
             </div>
-
-            <div class="form-group">
-                <label>Vehicle Details</label>
-                <input type="text" placeholder="e.g., Toyota Land Cruiser 2015">
+            <div class="location-card">
+                <div class="location-flag">🇬🇧</div>
+                <div class="location-name">United Kingdom</div>
+                <div class="location-count">5,979 cars</div>
             </div>
-
-            <div class="form-group">
-                <label>Destination Port</label>
-                <input type="text" placeholder="e.g., Mombasa, Kenya">
+            <div class="location-card">
+                <div class="location-flag">🇦🇪</div>
+                <div class="location-name">UAE</div>
+                <div class="location-count">2,692 cars</div>
             </div>
-
-            <div class="form-group full-width">
-                <label>Additional Requirements</label>
-                <textarea placeholder="Tell us more about your needs, budget, timeline, or any special requirements..."></textarea>
+            <div class="location-card">
+                <div class="location-flag">🇸🇬</div>
+                <div class="location-name">Singapore</div>
+                <div class="location-count">2,261 cars</div>
             </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Quote Request</button>
-        </form>
+            <div class="location-card">
+                <div class="location-flag">🇹🇭</div>
+                <div class="location-name">Thailand</div>
+                <div class="location-count">4,764 cars</div>
+            </div>
+            <div class="location-card">
+                <div class="location-flag">🇨🇳</div>
+                <div class="location-name">China</div>
+                <div class="location-count">271 cars</div>
+            </div>
+            <div class="location-card">
+                <div class="location-flag">🌍</div>
+                <div class="location-name">View All Locations</div>
+                <div class="location-count">150+ countries</div>
+            </div>
+        </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>WHAT OUR CLIENTS SAY</h2>
-            <p>Trusted by customers worldwide</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p class="testimonial-text">Exceptional service from start to finish. My Toyota Land Cruiser arrived in perfect condition to Nairobi. The team handled all documentation and kept me updated throughout the shipping process.</p>
-                    <p class="testimonial-author">Mohammed Al-Rashid</p>
-                    <p class="testimonial-location">Dubai, UAE</p>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p class="testimonial-text">I've been importing spare parts for my garage for 3 years now. Always genuine parts, competitive prices, and fast shipping. Highly recommended for businesses!</p>
-                    <p class="testimonial-author">James Okello</p>
-                    <p class="testimonial-location">Kampala, Uganda</p>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p class="testimonial-text">Professional team that understands the car export business. They helped me source a specific Honda Civic model and arranged competitive Ro-Ro shipping to Port of Spain.</p>
-                    <p class="testimonial-author">Carlos Martinez</p>
-                    <p class="testimonial-location">Trinidad & Tobago</p>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Find Your Perfect Car?</h2>
+            <p>Join thousands of satisfied customers worldwide who trust STL World Network for their Japanese vehicle imports</p>
+            <div class="cta-buttons">
+                <a href="#inventory" class="btn-cta btn-primary">Browse Inventory</a>
+                <a href="#support" class="btn-cta btn-secondary">Request a Quote</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="support">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>STL WORLD NETWORK LLC</h3>
-                <p>Your premier partner for Japanese vehicle exports and spare parts worldwide. We connect you directly to Japan's automotive excellence with complete shipping solutions.</p>
+                <p>Your premier partner for Japanese vehicle exports and spare parts worldwide. Direct access to USS and Arai auctions with complete shipping solutions.</p>
                 <p><strong>Head Office:</strong><br>
                 Tokyo, Japan</p>
-                <p><strong>Operating Hours:</strong><br>
-                Monday - Saturday: 9:00 AM - 6:00 PM JST<br>
-                Sunday: Closed</p>
+                <p><strong>USA Office:</strong><br>
+                [Your USA Address]</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="YouTube">▶</a>
+                </div>
             </div>
             
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#vehicles">Vehicle Inventory</a></li>
-                    <li><a href="#shipping">Shipping Methods</a></li>
-                    <li><a href="#parts">Spare Parts</a></li>
-                    <li><a href="#quote">Request Quote</a></li>
+                    <li><a href="#inventory">Find Cars</a></li>
+                    <li><a href="#how-to-buy">How to Buy</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#support">Support Center</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#services">Vehicle Export</a></li>
-                    <li><a href="#shipping">Ro-Ro Shipping</a></li>
-                    <li><a href="#shipping">Container Shipping</a></li>
-                    <li><a href="#parts">Spare Parts Supply</a></li>
-                    <li><a href="#services">Documentation</a></li>
-                    <li><a href="#services">Pre-Inspection</a></li>
+                    <li><a href="#">Ro-Ro Shipping</a></li>
+                    <li><a href="#">Container Shipping</a></li>
+                    <li><a href="#">Spare Parts</a></li>
+                    <li><a href="#">USS Auction Access</a></li>
+                    <li><a href="#">Arai Auction Access</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Popular Makes</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Toyota</a></li>
+                    <li><a href="#">Honda</a></li>
+                    <li><a href="#">Nissan</a></li>
+                    <li><a href="#">Mazda</a></li>
+                    <li><a href="#">Lexus</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><strong>Email:</strong><br>
-                sblogistics@stl-wn.com<br>
-                sblogistics@stl-wn.com</p>
-                <p><strong>Phone:</strong><br>
-                +81-80-1571-0834</p>
-                +81-29-956-4685</p>
-                <p><strong>WhatsApp:</strong><br>
-                +81-80-1571-0834</p>
-                <p><strong>WeChat/Line:</strong> Available</p>
+                <ul class="footer-links">
+                    <li>📧 info@stlworldnetwork.com</li>
+                    <li>📞 +81-XXX-XXXX-XXXX</li>
+                    <li>📱 WhatsApp: +81-XXX-XXX-XXXX</li>
+                    <li>⏰ Mon-Sat: 9AM-6PM JST</li>
+                </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 STL WORLD NETWORK LLC. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+            <p>&copy; 2026 STL WORLD NETWORK LLC. All rights reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a></p>
         </div>
     </footer>
 
     <script>
-        // Form submission handler
-        function handleQuoteSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your quote request! Our team will contact you within 24 hours.');
-            event.target.reset();
-        }
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behaviour: 'smooth',
+                        behavior: 'smooth',
                         block: 'start'
                     });
                 }
             });
         });
 
-        // Add animation on scroll
+        // Search form handler
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const params = new URLSearchParams(formData);
+            
+            // In production, redirect to search results page
+            alert('Searching for vehicles...\n\nFilters applied:\n' + 
+                  Array.from(formData.entries())
+                      .filter(([key, value]) => value)
+                      .map(([key, value]) => `${key}: ${value}`)
+                      .join('\n'));
+        });
+
+        // Search tabs functionality
+        document.querySelectorAll('.search-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1165,16 +1416,20 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .category-card, .feature-item, .testimonial-card').forEach(el => {
+        // Observe cards for animation
+        document.querySelectorAll('.make-card, .body-type-card, .service-card, .feature-card, .location-card, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
     </script>
 </body>
 </html>
-
 
